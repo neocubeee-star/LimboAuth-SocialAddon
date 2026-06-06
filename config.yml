@@ -1,0 +1,140 @@
+main:
+  serializer: LEGACY_AMPERSAND
+  prefix: "LimboAuth &6>>&f"
+  
+  telegram:
+    enabled: true
+    token: "YOUR_BOT_TOKEN_HERE"
+    admin-ids: []
+    max-linked-accounts: 5
+    max-login-history-size: 50
+    admin:
+      notify-suspicious-logins: true
+      suspicious-distance-threshold: 5000
+      trusted-ips: []
+  
+  discord:
+    enabled: false
+    token: "YOUR_DISCORD_BOT_TOKEN"
+    on-player-added: []
+    on-player-removed: []
+    activity-enabled: true
+    activity-type: "PLAYING"
+    activity-name: "LimboAuth Social Addon"
+    required-roles: []
+    guild-member-cache-enabled: false
+    no-roles-message: "You don't have permission to use commands"
+  
+  vk:
+    enabled: false
+    token: "YOUR_VK_TOKEN"
+  
+  geoip:
+    enabled: false
+    format: "{CITY}, {COUNTRY}"
+    locale: "en"
+    license-key: "YOUR_LICENSE_KEY"
+    update-interval: 1209600000
+  
+  social-register-cmds: ["!account register"]
+  social-link-cmds: ["!account link"]
+  force-keyboard-cmds: ["!keyboard"]
+  
+  linkage-main-cmd: "addsocial"
+  linkage-alias-cmd: ["addvk", "addtg", "addds"]
+  
+  force-unlink-main-cmd: "forcesocialunlink"
+  force-unlink-alias-cmd: ["forceunlink"]
+  
+  allow-premium-names-registration: false
+  allow-account-relink: true
+  disable-unlink: false
+  disable-link-without-password: false
+  disable-link-with-password: true
+  prohibit-premium-restore: true
+  enable-notify: true
+  unlink-btn-all: false
+  reverse-yes-no-buttons: false
+  auth-2fa-without-password: false
+  debug: false
+  
+  code-lower-bound: 1000000
+  code-upper-bound: 10000000
+  purge-registration-cache-millis: 86400000
+  max-registration-count-per-time: 3
+  
+  after-linkage-commands: ["alert {NICKNAME} has linked a social account"]
+  after-unlinkage-commands: []
+  start-messages: ["/start", "Начать"]
+  start-reply: "Send '!account link <nickname>' to link your account"
+  
+  strings:
+    link-cmd-usage: "{PRFX} Send '!account link <nickname>' to our Social Bot"
+    link-wrong-code: "{PRFX} Wrong code, run '!account link <nickname>' again"
+    link-success-game: "{PRFX} Social was successfully linked"
+    link-success: "✅ Social was successfully linked\nUse '!keyboard' to show keyboard"
+    link-already: "Account is already linked"
+    link-social-register-cmd-usage: "You didn't specify a nickname. Enter '!account register <nickname>'"
+    link-social-cmd-usage: "You didn't specify a nickname. Enter '!account link <nickname>'"
+    link-unknown-account: "There is no account with this nickname"
+    link-code: "🔑 Enter '/addsocial {CODE}' in game to complete account linking"
+    link-wrong-password: "Wrong password"
+    
+    register-incorrect-nickname: "There is no account with this nickname"
+    register-taken-nickname: "This nickname is already taken"
+    register-premium-nickname: "This nickname belongs to a premium player"
+    register-limit: "You've tried to register too many times!"
+    register-success: "✅ Account was successfully registered\nYour password: {PASSWORD}"
+    
+    notify-leave: "➖ You've left the server"
+    notify-join: "➕ You've joined the server\n🌐 IP: {IP} {LOCATION}"
+    notify-ask-validate: "❔ Someone tries to join the server.\n🌐 IP: {IP} {LOCATION}\nIs it you?"
+    notify-ask-validate-game: "{PRFX} You have 2FA enabled, check your social!"
+    notify-ask-yes: "It's me"
+    notify-ask-no: "It's not me"
+    notify-thanks: "Thanks for verifying your login"
+    notify-warn: "You can always change your password"
+    
+    block-toggle-btn: "🔒 Toggle block"
+    block-kick-message: "{PRFX} Your account was blocked"
+    block-success: "Account {NICKNAME} was successfully blocked"
+    unblock-success: "Account {NICKNAME} was successfully unblocked"
+    
+    totp-enable-success: "Account {NICKNAME} now uses 2FA"
+    totp-disable-success: "Account {NICKNAME} doesn't use 2FA anymore"
+    
+    notify-enable-success: "Account {NICKNAME} now receives notifications"
+    notify-disable-success: "Account {NICKNAME} doesn't receive notifications anymore"
+    
+    kick-is-offline: "Cannot kick player - player is offline"
+    kick-success: "Player {NICKNAME} was successfully kicked"
+    kick-game-message: "{PRFX} You were kicked by the Social"
+    
+    restore-msg: "🔄 New password for {NICKNAME}: {PASSWORD}"
+    restore-msg-premium: "⚠️ We can't change your password, {NICKNAME}, perhaps you are a premium player"
+    restore-btn: "🔄 Restore"
+    
+    info-btn: "ℹ️ Info"
+    info-msg: "👤 IGN: {NICKNAME}\n🌍 Status: {SERVER}\n🌐 IP: {IP} {LOCATION}\n⏰ Notifications: {NOTIFY_STATUS}\n❌ Blocked: {BLOCK_STATUS}\n🔑 2FA: {TOTP_STATUS}"
+    status-offline: "OFFLINE"
+    notify-enabled: "✅ Enabled"
+    notify-disabled: "❌ Disabled"
+    block-enabled: "🔒 Yes"
+    block-disabled: "🔓 No"
+    totp-enabled: "✅ Enabled"
+    totp-disabled: "❌ Disabled"
+    
+    kick-btn: "🚪 Kick"
+    toggle-notification-btn: "📢 Toggle notifications"
+    toggle-2fa-btn: "🔐 Toggle 2FA"
+    unlink-btn: "⛓️ Unlink social"
+    unlink-disabled: "Unlinking disabled"
+    unlink-success: "Unlink successful"
+    unlink-success-game: "{PRFX} Unlink successful"
+    unlink-block-conflict: "You cannot unlink while blocked. Unblock first"
+    unlink-2fa-conflict: "You cannot unlink while 2FA enabled. Disable it first"
+    
+    keyboard-restored: "⌨️ Keyboard was restored"
+    link-announcement: "{PRFX} We recommend you to link a social network using /addsocial"
+    social-exception-caught: "❌ An exception occurred while processing your request"
+    force-unlink-cmd-usage: "{PRFX} Usage: /forcesocialunlink <username>"
